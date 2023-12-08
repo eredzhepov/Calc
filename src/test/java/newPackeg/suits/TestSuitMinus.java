@@ -1,15 +1,19 @@
-package org.example;
+package newPackeg.suits;
 
+import org.junit.jupiter.api.Tag;
 import org.junit.platform.suite.api.IncludeTags;
 import org.junit.platform.suite.api.SelectPackages;
 import org.junit.platform.suite.api.Suite;
 
 @Suite
-@SelectPackages("org.example")
+@SelectPackages(value = {"newPackeg.tests"})
 @IncludeTags("minus")
-public class TestSuit {
+@Tag("suit")
+public class TestSuitMinus {
 
 }
+
+
 
 
 

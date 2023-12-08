@@ -1,10 +1,9 @@
-package org.example;
+package newPackeg.tests;
 
+import org.example.Calc;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class CalcTest {
     @BeforeAll
@@ -36,8 +35,10 @@ class CalcTest {
     }
 
     @ParameterizedTest
+    @DisplayName("Проверка суммы 0 значений")
+    @Tag("summ")
     @CsvSource({"0, 0, 0"})
-    void sum2(int a, int b, int expectedResult) {
+    void sumZeros(int a, int b, int expectedResult) {
         Calc calc = new Calc();
         int result = calc.summ(a, b);
         Assertions.assertEquals(expectedResult, result,"Сумма не верна");
@@ -64,7 +65,7 @@ class CalcTest {
 
     @ParameterizedTest(name = "#{index} - вычитание из {0} - {1}, ожидаемый результат = {2}")
     @CsvSource({"1,5,-4","-4,2,-6","-2,-3,1"})
-
+    @Tag("minus")
     void minusParam(int a, int b, int c) {
         Calc calc = new Calc();
         int result = calc.minus(a, b);
