@@ -43,7 +43,6 @@ class CalcTest {
         Assertions.assertEquals(expectedResult, result,"Сумма не верна");
     }
 
-
     @ParameterizedTest(name = "#{index} - сложение  {0} с {1}, ожидаемый результат = {2}")
     @CsvSource({"0, 0, 0", "1, 1, 2"})
     @DisplayName("Проверка сложения параметризацией")
